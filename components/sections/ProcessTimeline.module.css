@@ -1,0 +1,78 @@
+.timeline {
+  position: relative;
+  padding-left: var(--space-10);
+}
+
+.line {
+  position: absolute;
+  left: 19px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-primary) 0%, var(--border-light) 100%);
+}
+
+.item {
+  display: flex;
+  gap: var(--space-6);
+  padding-bottom: var(--space-10);
+  position: relative;
+}
+
+.item:last-child {
+  padding-bottom: 0;
+}
+
+.marker {
+  position: absolute;
+  left: calc(-1 * var(--space-10));
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--bg-secondary), var(--shadow-sm);
+}
+
+.stepNumber {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+}
+
+.content {
+  padding-top: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: var(--space-8);
+  }
+  .marker {
+    left: calc(-1 * var(--space-8));
+    width: 36px;
+    height: 36px;
+  }
+  .line {
+    left: 17px;
+  }
+}
