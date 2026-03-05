@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Accordion from '@/components/ui/Accordion';
 import Breadcrumb from '@/components/ui/Breadcrumb';
-import { JsonLd, generateBreadcrumbSchema, generateServiceSchema } from '@/lib/schema/jsonld';
+import { JsonLd, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '@/lib/schema/jsonld';
 import styles from './cleaning.module.css';
 
 export const metadata: Metadata = {
@@ -134,9 +134,10 @@ export default function CleaningPage() {
       <section className="section" aria-label="洗骨の工程">
         <div className="container">
           <FadeIn direction="up" className={`text-center ${styles.processHeaderMargin}`}>
-            <h2 className="section__title">完全公開・安心の6工程</h2>
+            <h2 className="section__title">安心の6工程｜写真付き作業報告書</h2>
             <p className="section__description">
-              デリケートなご遺骨を傷つけないよう、手作業と超音波を使い分けて丁寧に洗浄します。
+              デリケートなご遺骨を傷つけないよう、手作業と超音波を使い分けて丁寧に洗浄します。<br />
+              処理完了後は写真付きの「作業報告書」をご返送時に同封してお渡しします。
             </p>
           </FadeIn>
 
@@ -199,8 +200,9 @@ export default function CleaningPage() {
       <JsonLd data={generateServiceSchema({
         name: '洗骨（専用洗浄）サービス',
         description: 'カビ・汚れ・変色した遺骨を専門洗浄液と超音波で丁寧に洗い流すサービス。長期保管や湿気による劣化に対応し、完全乾燥とUV殺菌で清潔な状態に復元します。',
-        url: 'https://ikotsu.example.com/services/cleaning',
+        url: '/services/cleaning',
       })} />
+      <JsonLd data={generateFAQSchema(FAQS.map(f => ({ question: f.question, answer: typeof f.answer === 'string' ? f.answer : '詳細はページ内をご覧ください。' })))} />
     </>
   );
 }

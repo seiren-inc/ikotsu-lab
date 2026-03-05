@@ -11,14 +11,13 @@ export const metadata: Metadata = {
 };
 
 const COMPANY_INFO = [
-  { label: '運営会社 / 屋号', value: '株式会社清蓮（Seiren Inc.） / Ikotsu.com（遺骨.com）' },
-  { label: '代表者', value: '（代表者名）' },
-  { label: '設立', value: '（設立年月）' },
-  { label: '所在地', value: '〒231-0000 神奈川県横浜市中区（詳細住所）\n※ご持込によるお預かりは事前ご予約制となっております。' },
-  { label: '電話番号', value: '0120-000-000（受付時間：10:00 - 18:00 / 土日祝対応可能）' },
+  { label: '運営会社 / 屋号', value: '株式会社清蓮（Seiren Inc.） / 遺骨.com（Ikotsu.com）' },
+  { label: '代表者', value: '代表取締役　眞如 りえ' },
+  { label: '設立', value: '2008年8月6日' },
+  { label: '所在地', value: '〒244-0003 神奈川県横浜市戸塚区戸塚町4170 高橋ビル1F\n※ご持込によるお預かりは事前ご予約制となっております。' },
+  { label: '電話番号', value: '0800-888-8788（フリーコール）/ 045-881-9952（代表）\n受付時間：10:00 - 18:00（土日祝対応可）' },
   { label: '事業内容', value: '・ご遺骨の粉骨・洗浄・乾燥処理\n・出張お引取りおよび搬送サービス\n・海洋散骨・手元供養品のご案内\n・寺院・葬儀社向けBtoB粉骨洗浄サービス' },
   { label: '主要取引先', value: '全国の提携寺院、葬儀社、納骨堂運営法人 様' },
-  { label: '顧問弁護士', value: '〇〇法律事務所' },
 ];
 
 export default function CompanyPage() {

@@ -23,7 +23,7 @@ export default function CorporateCTA() {
               <p className={styles.description}>
                 寺院・納骨堂・霊園・葬儀社のパートナーとして、
                 粉骨・洗骨の外部委託をお受けしています。
-                品質管理・工程公開・柔軟な契約で、安心してお任せいただけます。
+                品質管理レポート（写真付き）・明朗会計・柔軟な契約で、安心してお任せいただけます。
               </p>
               <div className={styles.features}>
                 {FEATURES.map((feature) => (

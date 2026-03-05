@@ -75,9 +75,9 @@ export default function Header() {
     >
       <div className={styles.inner}>
         {/* Logo */}
-        <Link href="/" className={styles.logo} aria-label="Ikotsu.com トップページへ">
-          <span className={styles.logoMark}>Ikotsu</span>
-          <span className={styles.logoAccent}>Lab</span>
+        <Link href="/" className={styles.logo} aria-label="遺骨.com トップページへ">
+          <span className={styles.logoMark}>遺骨</span>
+          <span className={styles.logoAccent}>.com</span>
         </Link>
 
         {/* Desktop Nav */}

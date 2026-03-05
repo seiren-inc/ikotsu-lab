@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Accordion from '@/components/ui/Accordion';
 import Breadcrumb from '@/components/ui/Breadcrumb';
-import { JsonLd, generateBreadcrumbSchema, generateServiceSchema } from '@/lib/schema/jsonld';
+import { JsonLd, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '@/lib/schema/jsonld';
 import styles from './carrying.module.css';
 
 export const metadata: Metadata = {
@@ -219,8 +219,9 @@ export default function CarryingPage() {
       <JsonLd data={generateServiceSchema({
         name: '出張・搬送（お迎え）サービス',
         description: '重くて運びづらいご遺骨を、専任スタッフが直接ご自宅までお迎えにあがり、大切に自社施設へ搬送するサービスです。全国対応。',
-        url: 'https://ikotsu.example.com/services/carrying',
+        url: '/services/carrying',
       })} />
+      <JsonLd data={generateFAQSchema(FAQS.map(f => ({ question: f.question, answer: typeof f.answer === 'string' ? f.answer : '詳細はページ内をご覧ください。' })))} />
     </>
   );
 }

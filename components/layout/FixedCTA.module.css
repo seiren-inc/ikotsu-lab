@@ -67,6 +67,16 @@
   background: var(--accent-primary-light);
 }
 
+.ctaButton--line {
+  background: #06C755;
+  color: #fff;
+}
+
+.ctaButton--line:hover {
+  background: #05b34c;
+  box-shadow: var(--shadow-hover), 0 0 16px rgba(6, 199, 85, 0.35);
+}
+
 /* ── Icon ── */
 .ctaIcon {
   display: inline-flex;
@@ -135,6 +145,12 @@
     background: var(--bg-elevated);
     border: none;
     border-left: 1px solid var(--border-light);
+  }
+
+  .ctaButton--line {
+    background: #06C755;
+    color: #fff;
+    border-left: 1px solid rgba(0,0,0,0.06);
   }
 
   .ctaLabel {

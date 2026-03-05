@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Accordion from '@/components/ui/Accordion';
 import Breadcrumb from '@/components/ui/Breadcrumb';
-import { JsonLd, generateBreadcrumbSchema, generateServiceSchema } from '@/lib/schema/jsonld';
+import { JsonLd, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '@/lib/schema/jsonld';
 import styles from './takeout.module.css';
 
 export const metadata: Metadata = {
@@ -184,8 +184,9 @@ export default function TakeoutPage() {
       <JsonLd data={generateServiceSchema({
         name: 'お引取り（ご郵送受付）サービス',
         description: '全国対応の遺骨郵送受付サービス。専用の無料梱包キットを用いて着払いで発送できるため、遠方や外出が難しい方でも安心してご依頼いただけます。',
-        url: 'https://ikotsu.example.com/services/takeout',
+        url: '/services/takeout',
       })} />
+      <JsonLd data={generateFAQSchema(FAQS.map(f => ({ question: f.question, answer: typeof f.answer === 'string' ? f.answer : '詳細はページ内をご覧ください。' })))} />
     </>
   );
 }

@@ -8,7 +8,7 @@ interface GenerateMetadataParams {
   noindex?: boolean;
 }
 
-const SITE_NAME = 'Ikotsu.com｜粉骨・洗骨の専門機関';
+const SITE_NAME = '遺骨.com｜粉骨・洗骨の専門機関';
 const SITE_URL = 'https://ikotsu.com';
 
 export function generatePageMetadata({

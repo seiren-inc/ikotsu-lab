@@ -23,7 +23,7 @@ export default function HeroSection() {
           </FadeIn>
           <FadeIn direction="up" delay={0.16}>
             <p className={styles.description}>
-              工程公開・料金透明・全国対応。<br />
+              写真報告書付き・料金透明・全国対応。<br />
               散骨・改葬・保存のための遺骨前処理を、<br />
               安心と信頼の専門機関がお受けします。
             </p>
@@ -42,7 +42,7 @@ export default function HeroSection() {
             <div className={styles.badges}>
               <div className={styles.badge}>
                 <span className={styles.badgeIcon}>✓</span>
-                <span className={styles.badgeText}>全工程公開</span>
+                <span className={styles.badgeText}>写真報告書付き</span>
               </div>
               <div className={styles.badge}>
                 <span className={styles.badgeIcon}>✓</span>

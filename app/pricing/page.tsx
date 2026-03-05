@@ -375,7 +375,9 @@ export default function PricingPage() {
                 <li>遺骨の量・状態・組み合わせるオプションにより変動します。</li>
                 <li>出張・搬送に伴う有料道路や駐車場費用などは、実費でのご負担となる場合がございます。</li>
                 <li>事前にご案内した御見積りの料金以外の追加費用は原則発生しません。作業前にすべてご案内し、ご納得いただいてからの開始となります。</li>
-                <li>法人・寺院・葬儀社など継続依頼の場合は、別途BtoBお見積もりをご案内します。</li>
+                <li>
+                  <strong>業務提携・OEM提供等をご検討の法人・寺院・葬儀社様</strong>には、一般非公開の特別料金表（卸価格）をご用意しております。詳細は<a href="/for-corporate" style={{ textDecoration: 'underline', color: 'var(--primary)' }}>法人様向け専門窓口・お問い合わせページ</a>をご覧ください。
+                </li>
               </ul>
             </div>
           </ScrollReveal>

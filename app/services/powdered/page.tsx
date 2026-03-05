@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Accordion from '@/components/ui/Accordion';
 import Breadcrumb from '@/components/ui/Breadcrumb';
-import { JsonLd, generateBreadcrumbSchema, generateServiceSchema } from '@/lib/schema/jsonld';
+import { JsonLd, generateBreadcrumbSchema, generateServiceSchema, generateFAQSchema } from '@/lib/schema/jsonld';
 import styles from './powdered.module.css';
 
 export const metadata: Metadata = {
@@ -129,9 +129,10 @@ export default function PowderedPage() {
       <section className="section" aria-label="粉骨の工程">
         <div className="container">
           <FadeIn direction="up" className={`text-center ${styles.processHeaderMargin}`}>
-            <h2 className="section__title">完全公開・安心の6工程</h2>
+            <h2 className="section__title">安心の6工程｜立会サービス対応</h2>
             <p className="section__description">
-              すべての工程で写真付きの記録を残し、ご返送時に「作業報告書」としてご提出します。
+              粉骨はご希望の方に限り<strong>立会（見学）が可能</strong>なサービスです。<br />
+              また、処理完了後に写真付きの「作業報告書」をご返送時に同封しています。
             </p>
           </FadeIn>
 
@@ -149,6 +150,105 @@ export default function PowderedPage() {
               </StaggerItem>
             ))}
           </StaggerChildren>
+        </div>
+      </section>
+
+      {/* Work Report Preview */}
+      <section className="section" aria-label="作業報告書">
+        <div className="container">
+          <div className={styles.reportLayout}>
+            <FadeIn direction="right" className={styles.reportImageWrap}>
+              <Image
+                src="/images/work-report-mockup.png"
+                alt="粉骨完了後に届く作業報告書の見本"
+                width={480}
+                height={640}
+                className={styles.reportImage}
+              />
+            </FadeIn>
+            <FadeIn direction="left" className={styles.reportText}>
+              <span className="section__label">Report</span>
+              <h2 className={styles.reportTitle}>処理完了後に<br />「作業報告書」をお届けします</h2>
+              <p className={styles.reportLead}>
+                粉骨が完了したご遺骨をご返送する際、必ず<strong>写真付きの作業報告書</strong>を同封しています。
+              </p>
+              <ul className={styles.reportPoints}>
+                <li>
+                  <span className={styles.rPointIcon}>📷</span>
+                  <span><strong>処理前・処理後の写真</strong>を両方掲載</span>
+                </li>
+                <li>
+                  <span className={styles.rPointIcon}>✓</span>
+                  <span>担当者名・作業完了日・管理番号を明記</span>
+                </li>
+                <li>
+                  <span className={styles.rPointIcon}>✓</span>
+                  <span>六価クロム還元処理・UV殺菌の実施確認欄</span>
+                </li>
+                <li>
+                  <span className={styles.rPointIcon}>✓</span>
+                  <span>A4判・郵送封筒に同封して返送</span>
+                </li>
+              </ul>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+      {/* Witnessing Service */}
+      <section className="section section--alt" aria-label="立会サービス">
+        <div className="container">
+          <div className={styles.witnessingLayout}>
+            <FadeIn direction="left" className={styles.witnessingText}>
+              <span className="section__label">Witnessing</span>
+              <h2 className={styles.witnessingTitle}>粉骨の立会サービス</h2>
+              <p className={styles.witnessingLead}>
+                粉骨処理は、ご希望の方に限り<strong>ご立会（見学）いただけます</strong>。
+                処理の様子を直接ご確認いただくことで、安心してお任せいただける環境を整えています。
+              </p>
+              <ul className={styles.witnessingPoints}>
+                <li>
+                  <span className={styles.pointIcon}>✓</span>
+                  <span>粉骨専用機器による処理の様子をご覧いただけます</span>
+                </li>
+                <li>
+                  <span className={styles.pointIcon}>✓</span>
+                  <span>完全に1件ずつ個別処理。混在は一切ありません</span>
+                </li>
+                <li>
+                  <span className={styles.pointIcon}>✓</span>
+                  <span>事前予約制・完全個室での対応</span>
+                </li>
+                <li>
+                  <span className={styles.pointIcon}>⚠</span>
+                  <span>作業場所・施設内部の写真撮影はご遠慮いただいています</span>
+                </li>
+              </ul>
+              <div className={styles.witnessingMeta}>
+                <div className={styles.witnessingMetaItem}>
+                  <span className={styles.metaLabel}>立会費用</span>
+                  <span className={styles.metaValue}>粉骨料金に含む（追加費用なし）</span>
+                </div>
+                <div className={styles.witnessingMetaItem}>
+                  <span className={styles.metaLabel}>所要時間</span>
+                  <span className={styles.metaValue}>40〜60分程度</span>
+                </div>
+                <div className={styles.witnessingMetaItem}>
+                  <span className={styles.metaLabel}>対象</span>
+                  <span className={styles.metaValue}>直接持込みのご依頼のみ（郵送・出張は対象外）</span>
+                </div>
+              </div>
+              <Button href="/contact" variant="primary">立会を希望してお問い合わせ</Button>
+            </FadeIn>
+            <FadeIn direction="right" className={styles.witnessingImageWrap}>
+              <Image
+                src="/images/witnessing-room.png"
+                alt="立会（見学）スペース - 清潔な個室環境"
+                width={560}
+                height={420}
+                className={styles.witnessingImage}
+              />
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -194,8 +294,9 @@ export default function PowderedPage() {
       <JsonLd data={generateServiceSchema({
         name: '粉骨（パウダー化）サービス',
         description: '遺骨を専用設備でパウダー状に処理。散骨・改葬・手元供養に対応。六価クロム還元処理・UV殺菌標準付帯。',
-        url: 'https://ikotsu.example.com/services/powdered',
+        url: '/services/powdered',
       })} />
+      <JsonLd data={generateFAQSchema(FAQS.map(f => ({ question: f.question, answer: typeof f.answer === 'string' ? f.answer : '詳細はページ内をご覧ください。' })))} />
     </>
   );
 }

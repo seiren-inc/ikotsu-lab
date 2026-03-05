@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import ScrollReveal from '@/components/motion/ScrollReveal';
 import ContactForm from '@/components/forms/ContactForm';
 import Breadcrumb from '@/components/ui/Breadcrumb';
@@ -21,7 +22,14 @@ const CONTACT_POINTS = [
   {
     icon: '☎',
     title: '電話で相談',
-    desc: '0120-000-000（平日9:00〜18:00）',
+    desc: `0800-888-8788（フリーコール）/ 045-881-9952（代表）
+受付時間：10:00～18:00（土日祈対応可）`,
+  },
+  {
+    icon: '💬',
+    title: 'LINEで相談',
+    desc: '公式アカウントでチャット形式でお問い合わせいただけます。',
+    href: 'https://line.me/R/ti/p/@956lieqb',
   },
   {
     icon: '✓',
@@ -77,6 +85,37 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* LINE Banner */}
+      <section className="section" aria-label="LINE友だち追加">
+        <div className="container container--narrow">
+          <ScrollReveal>
+            <div className={styles.lineSection}>
+              <div className={styles.lineText}>
+                <p className={styles.lineTitle}>LINEでも相談できます</p>
+                <p className={styles.lineDesc}>
+                  公式LINEアカウントを友だち追加すると、チャット形式でお気軽にご相談いただけます。
+                </p>
+              </div>
+              <a
+                href="https://line.me/R/ti/p/@956lieqb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.lineImgLink}
+                aria-label="LINE公式アカウントを友だち追加する"
+              >
+                <Image
+                  src="/Line_add.jpg"
+                  alt="LINE 友だち追加"
+                  width={240}
+                  height={72}
+                  className={styles.lineImg}
+                />
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Form */}
       <section className="section">
         <div className="container container--narrow">
@@ -106,7 +145,7 @@ export default function ContactPage() {
               <ul className={styles.notesList}>
                 <li>ご相談内容は、弊社スタッフのみが確認します。第三者に開示することはありません。</li>
                 <li>返信は受付から2営業日以内を目安にしています。順番にご対応しています。</li>
-                <li>お急ぎの場合は、お電話（0120-000-000）にてご連絡ください。</li>
+                <li>お急ぎの場合は、フリーコール（0800-888-8788）または045-881-9952にてご連絡ください。</li>
                 <li>法人・寺院・葬儀社などの法人窓口は、
                   <a href="/for-corporate" className={styles.notesLink}>法人向けページ</a>
                   よりお問い合わせください。

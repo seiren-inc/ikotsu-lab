@@ -6,6 +6,7 @@ import ProcessTimeline from '@/components/sections/ProcessTimeline';
 import PricePreview from '@/components/sections/PricePreview';
 import DiagnosisTeaser from '@/components/sections/DiagnosisTeaser';
 import CaseAuthority from '@/components/sections/CaseAuthority';
+import Testimonials from '@/components/sections/Testimonials';
 import GuideHub from '@/components/sections/GuideHub';
 import CorporateCTA from '@/components/sections/CorporateCTA';
 import FAQPreview from '@/components/sections/FAQPreview';
@@ -13,9 +14,9 @@ import RelatedServices from '@/components/sections/RelatedServices';
 import { JsonLd, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema/jsonld';
 
 export const metadata: Metadata = {
-  title: 'Ikotsu.com｜粉骨・洗骨の専門機関',
+  title: '遺骨.com｜粉骨・洗骨の専門機関',
   description:
-    '粉骨・洗骨の専門機関 Ikotsu.com（遺骨.com）。工程公開・料金透明・全国対応。散骨・改葬・保存のための遺骨前処理を専門機関品質で提供します。',
+    '粉骨・洗骨の専門機関 遺骨.com。写真報告書付き・料金透明・全国対応。散骨・改葬・保存のための遺骨前処理を専門機関品質で提供します。',
   alternates: {
     canonical: '/',
   },
@@ -44,6 +45,7 @@ export default function Home() {
       <PricePreview />
       <DiagnosisTeaser />
       <CaseAuthority />
+      <Testimonials />
       <GuideHub />
       <CorporateCTA />
       <FAQPreview />

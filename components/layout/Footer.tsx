@@ -22,6 +22,7 @@ const FOOTER_LINKS = {
     title: 'ガイド',
     links: [
       { label: 'ガイド一覧', href: '/guide' },
+      { label: '全国対応エリア', href: '/area' },
     ],
   },
   legal: {
@@ -60,15 +61,15 @@ export default function Footer() {
         <div className={styles.top}>
           {/* Brand */}
           <div className={styles.brand}>
-            <Link href="/" className={styles.logo} aria-label="Ikotsu.com トップページ">
-              <span className={styles.logoMark}>Ikotsu</span>
-              <span className={styles.logoAccent}>Lab</span>
+            <Link href="/" className={styles.logo} aria-label="遺骨.com トップページ">
+              <span className={styles.logoMark}>遺骨</span>
+              <span className={styles.logoAccent}>.com</span>
             </Link>
             <p className={styles.tagline}>
               粉骨・洗骨の専門機関
             </p>
             <p className={styles.brandDescription}>
-              工程公開・料金透明・全国対応。
+              写真報告書付き・料金透明・全国対応。
               <br />
               遺骨の前処理を専門機関品質で。
             </p>
@@ -131,7 +132,7 @@ export default function Footer() {
             </p>
           </div>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Ikotsu.com / 株式会社清蓮. All rights reserved.
+            © {new Date().getFullYear()} 遺骨.com / 株式会社清蓮. All rights reserved.
           </p>
         </div>
       </div>

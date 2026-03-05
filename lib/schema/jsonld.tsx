@@ -5,21 +5,22 @@ export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Ikotsu.com（遺骨.com）',
+    name: '遺骨.com',
     alternateName: '遺骨.com',
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
-    description: '粉骨・洗骨の専門機関。工程公開・料金透明・全国対応。',
+    description: '粉骨・洗骨の専門機関。写真報告書付き・料金透明・全国対応。',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: '横浜市',
+      streetAddress: '戸塚町4170 高橋ビル1F',
+      addressLocality: '横浜市戸塚区',
       addressRegion: '神奈川県',
-      postalCode: '231-0000',
+      postalCode: '244-0003',
       addressCountry: 'JP',
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+81-120-000-000',
+      telephone: '+81-800-888-8788',
       contactType: 'customer service',
       availableLanguage: 'Japanese',
     },
@@ -36,16 +37,16 @@ export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Ikotsu.com（遺骨.com）',
+    name: '遺骨.com',
     url: SITE_URL,
-    telephone: '0120-000-000',
+    telephone: '0800-888-8788',
     email: 'info@ikotsu.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '（詳細住所）',
-      addressLocality: '横浜市中区',
+      streetAddress: '戸塚町4170 高橋ビル1F',
+      addressLocality: '横浜市戸塚区',
       addressRegion: '神奈川県',
-      postalCode: '231-0000',
+      postalCode: '244-0003',
       addressCountry: 'JP',
     },
     geo: {
@@ -107,7 +108,7 @@ export function generateServiceSchema(params: {
     url: `${SITE_URL}${params.url}`,
     provider: {
       '@type': 'Organization',
-      name: params.provider || 'Ikotsu.com（遺骨.com）',
+      name: params.provider || '遺骨.com',
     },
     areaServed: {
       '@type': 'Country',
@@ -136,11 +137,11 @@ export function generateArticleSchema(params: {
     dateModified: params.dateModified,
     author: {
       '@type': 'Organization',
-      name: params.author || 'Ikotsu.com（遺骨.com）',
+      name: params.author || '遺骨.com',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Ikotsu.com（遺骨.com）',
+      name: '遺骨.com',
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_URL}/images/logo.png`,

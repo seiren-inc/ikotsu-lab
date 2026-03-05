@@ -18,7 +18,7 @@ const MERITS = [
   { icon: '🔄', title: '継続・まとめ依頼に対応', desc: '月間件数に応じた専用の契約モデルをご提案。定期的な一括搬送・一括処理にも柔軟に対応可能です。' },
   { icon: '📄', title: '処理報告書の発行', desc: '全件について処理前後の写真を含む記録レポートを発行。貴院・貴社の管理書類として確実にご活用いただけます。' },
   { icon: '🔒', title: '徹底した情報管理と守秘義務', desc: 'ご依頼件数やエンドユーザー様の個人情報は厳重に管理。第三者への開示は一切行いません。' },
-  { icon: '💰', title: '法人特別価格のご提示', desc: '月間の想定件数や業務フローの巻き取り範囲に応じた専用の料金体系をご用意いたします。見積もりは無料です。' },
+  { icon: '💰', title: '法人特別価格（卸価格）のご提示', desc: '具体的な卸価格は一般非公開としております。月間の想定件数や業務フローに応じた専用料金体系を、資料請求・お打ち合わせにてご案内いたします（見積無料）。' },
   { icon: '🚚', title: '出張引取り・定期搬送', desc: '貴院やご指定の倉庫・施設への定期的な出張引取り・搬送も承ります。全国どこでも対応いたします。' },
 ];
 
@@ -51,13 +51,13 @@ export default function ForCorporatePage() {
         <div className="container">
           <FadeIn direction="up">
             <span className={styles.heroBadge}>BtoB / 法人・寺院専用窓口</span>
-            <h1 className={styles.heroTitle}>確実な処理と厳格な情報管理で、<br />貴院・貴社の業務をバックアップ</h1>
+            <h1 className={styles.heroTitle}>自社サービスとしての組み込みにも対応。<br />各種ご依頼からOEMまで一貫サポート</h1>
             <p className={styles.heroLead}>
               安定した品質の粉骨・洗骨処理を、継続依頼・業務提携のスキームで提供いたします。<br />
-              寺院、納骨堂、葬儀社をはじめとする多様な法人様における「ご遺骨の管理・処理」の課題を、専門機関である Ikotsu.com がワンストップで解決します。
+              御社名でのエンドユーザー対応（黒衣対応）やOEMにも柔軟に対応。寺院、納骨堂、葬儀社など多様な法人様における「ご遺骨の管理・処理」の課題を、専門機関である 遺骨.com がワンストップで解決します。
             </p>
             <div className={styles.heroActions}>
-              <Button href="#contact" variant="primary" size="lg">法人相談・見積もり（無料）</Button>
+              <Button href="#contact" variant="primary" size="lg">法人特別料金表をご請求・見積もり（無料）</Button>
             </div>
           </FadeIn>
         </div>
@@ -103,6 +103,7 @@ export default function ForCorporatePage() {
                 <li><span className={styles.highlight}>月数十件〜の大型案件・一括処理</span>にも専用設備と人員で余裕をもって対応</li>
                 <li>自社のリソースを本来のコア業務（顧客対応等）に集中できる</li>
                 <li>全件<span className={styles.highlight}>写真付きの処理報告書</span>を発行し、そのままエンドユーザーへの報告に使える</li>
+                <li>御社のサービス（OEM）としてエンドユーザー様にご提供いただくことも可能</li>
                 <li>専任担当者が窓口を一本化。見積りから回収、処理、返送まで完結</li>
               </ul>
             </FadeIn>
@@ -155,7 +156,7 @@ export default function ForCorporatePage() {
             <span className="section__label">Contact & Document</span>
             <h2 className="section__title">法人専用お問い合わせ・資料請求</h2>
             <p className="section__description" style={{ marginTop: 'var(--space-4)' }}>
-              サービス案内の資料（PDF）をご希望の方、または具体的なお見積り・ご相談をご希望の方は、<br />
+              一般非公開の「法人向け特別料金表」やサービス案内資料（PDF）をご希望の方、または具体的なお見積り・ご相談をご希望の方は、<br />
               以下のフォームより必要事項をご入力ください。専任担当より1〜2営業日以内にご連絡いたします。
             </p>
           </FadeIn>

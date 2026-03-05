@@ -1,44 +1,63 @@
-import type { Metadata } from 'next';
-import { Inter, Noto_Sans_JP } from 'next/font/google';
-import Script from 'next/script';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import FixedCTA from '@/components/layout/FixedCTA';
-import { JsonLd, generateOrganizationSchema, generateLocalBusinessSchema } from '@/lib/schema/jsonld';
-import './globals.css';
+import type { Metadata } from "next";
+import { Inter, Noto_Sans_JP } from "next/font/google";
+import Script from "next/script";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import FixedCTA from "@/components/layout/FixedCTA";
+import {
+  JsonLd,
+  generateOrganizationSchema,
+  generateLocalBusinessSchema,
+} from "@/lib/schema/jsonld";
+import "./globals.css";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 const notoSansJP = Noto_Sans_JP({
-  subsets: ['latin'],
-  variable: '--font-noto-sans-jp',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-noto-sans-jp",
+  display: "swap",
   preload: false,
 });
 
 export const metadata: Metadata = {
-  title: 'Ikotsu.com｜粉骨・洗骨の専門機関',
+  title: "遺骨.com｜粉骨・洗骨の専門機関",
   description:
-    '粉骨・洗骨の専門機関 Ikotsu.com（遺骨.com）。工程公開・料金透明・全国対応。散骨・改葬・保存のための遺骨前処理を専門機関品質で提供します。',
-  metadataBase: new URL('https://ikotsu.com'),
+    "粉骨・洗骨の専門機関 遺骨.com。写真報告書付き・料金透明・全国対応。散骨・改葬・保存のための遺骨前処理を専門機関品質で提供します。",
+  metadataBase: new URL("https://ikotsu.com"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    type: 'website',
-    locale: 'ja_JP',
-    siteName: 'Ikotsu.com｜粉骨・洗骨の専門機関',
+    type: "website",
+    locale: "ja_JP",
+    siteName: "遺骨.com｜粉骨・洗骨の専門機関",
+    images: [
+      {
+        url: "/og?title=遺骨.com｜粉骨・洗骨の専門機関",
+        width: 1200,
+        height: 630,
+        alt: "遺骨.com｜粉骨・洗骨の専門機関",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og?title=遺骨.com｜粉骨・洗骨の専門機関"],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: '3PkayZf9g0-EFWdG-1hOMAnJ2vu9_dvaQTmBxlkRc5E',
   },
 };
 
@@ -87,9 +106,7 @@ export default function RootLayout({
 
         <Header />
 
-        <main id="main-content">
-          {children}
-        </main>
+        <main id="main-content">{children}</main>
 
         <Footer />
         <FixedCTA />

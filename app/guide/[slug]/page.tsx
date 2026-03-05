@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {};
 
   return {
-    title: `${article.title} | Ikotsu.com｜粉骨・洗骨の専門機関`,
+    title: `${article.title} | 遺骨.com｜粉骨・洗骨の専門機関`,
     description: article.description,
     alternates: { canonical: `/guide/${slug}` },
   };
@@ -97,7 +97,7 @@ export default async function GuideArticlePage({ params }: Props) {
                 <h1 className={styles.articleHeaderTitle}>{article.title}</h1>
                 <div className={styles.articleHeaderMeta}>
                   <span>🕒 読了目安：{article.readTime}</span>
-                  <span>✍️ Ikotsu.com カスタマーサクセスチーム</span>
+                  <span>✒️ 遺骨.com 編集部</span>
                 </div>
               </FadeIn>
             </div>
@@ -136,9 +136,9 @@ export default async function GuideArticlePage({ params }: Props) {
                 display: 'flex', gap: 'var(--space-6)', background: 'var(--bg-elevated)', border: '1px solid var(--border-light)', padding: 'var(--space-8)', borderRadius: 'var(--radius-xl)'
               }}>
                 <div style={{ flex: 1 }}>
-                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 'var(--font-bold)', marginBottom: 'var(--space-2)' }}>監修・執筆：Ikotsu.com 編集部</h3>
+                  <h3 style={{ fontSize: 'var(--text-base)', fontWeight: 'var(--font-bold)', marginBottom: 'var(--space-2)' }}>監修・執筆：遺骨.com 編集部</h3>
                   <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 'var(--leading-relaxed)' }}>
-                    Ikotsu.com は、国土交通省のガイドラインおよび関連法令を遵守し、年間多数の粉骨・洗骨処理を行う専門機関です。遺骨というデリケートな対象を扱うプロフェッショナルとして、正確で透明性のある情報発信に努めています。
+                    遺骨.com（株式会社清蓮）は、散骨・改葬に関わる法規制および関連法令を遵守し、年間多数の粉骨・洗骨処理を行う専門機関です。遺骨というデリケートな対象を扱うプロフェッショナルとして、正確で透明性の高い情報発信に努めています。
                   </p>
                 </div>
               </div>
@@ -198,8 +198,8 @@ export default async function GuideArticlePage({ params }: Props) {
         title: article.title,
         description: article.description,
         url: `/guide/${slug}`,
-        datePublished: '2026-03-01',
-        dateModified: '2026-03-01',
+        datePublished: '2026-03-05',
+        dateModified: '2026-03-05',
       })} />
     </>
   );

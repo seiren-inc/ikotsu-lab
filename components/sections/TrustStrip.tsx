@@ -6,7 +6,7 @@ import styles from './TrustStrip.module.css';
 
 const TRUST_ITEMS = [
   {
-    value: 5000,
+    value: 6800,
     suffix: '件+',
     label: '処理実績',
     icon: (
@@ -18,11 +18,11 @@ const TRUST_ITEMS = [
   {
     value: 100,
     suffix: '%',
-    label: '工程公開',
+    label: '写真レポート付き',
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M14 24C19.523 24 24 19.523 24 14C24 8.477 19.523 4 14 4C8.477 4 4 8.477 4 14C4 19.523 8.477 24 14 24Z" stroke="currentColor" strokeWidth="1.5"/>
         <path d="M10 14L13 17L18 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14 24C19.523 24 24 19.523 24 14C24 8.477 19.523 4 14 4C8.477 4 4 8.477 4 14C4 19.523 8.477 24 14 24Z" stroke="currentColor" strokeWidth="1.5"/>
       </svg>
     ),
   },
@@ -38,7 +38,7 @@ const TRUST_ITEMS = [
     ),
   },
   {
-    value: 200,
+    value: 180,
     suffix: '社+',
     label: '法人取引',
     icon: (
