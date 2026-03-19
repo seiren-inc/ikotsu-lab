@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-import HeroSection from '@/components/sections/HeroSection';
+import HeroTrust from '@/components/features/HeroTrust';
 import TrustStrip from '@/components/sections/TrustStrip';
-import ServiceCards from '@/components/sections/ServiceCards';
+import SolutionNav from '@/components/features/SolutionNav';
+import BentoServices from '@/components/features/BentoServices';
 import ProcessTimeline from '@/components/sections/ProcessTimeline';
 import PricePreview from '@/components/sections/PricePreview';
+import ProductLineup from '@/components/features/ProductLineup';
 import DiagnosisTeaser from '@/components/sections/DiagnosisTeaser';
 import CaseAuthority from '@/components/sections/CaseAuthority';
 import Testimonials from '@/components/sections/Testimonials';
@@ -43,17 +45,46 @@ export default async function Home() {
 
   return (
     <>
-      <HeroSection />
+      {/* ① トラスト・ヒーロー（流体モーフィング + 権威性バッジ） */}
+      <HeroTrust />
+
+      {/* ② 実績数値カウンター */}
       <TrustStrip />
-      <ServiceCards />
+
+      {/* ③ 目的別ソリューション */}
+      <SolutionNav />
+
+      {/* ④ コア・サービス一覧（Bento Grid） */}
+      <BentoServices />
+
+      {/* ⑤ 処理フロー */}
       <ProcessTimeline />
+
+      {/* ⑥ 料金の目安 */}
       <PricePreview />
+
+      {/* ⑦ 収骨製品・手元供養ラインナップ */}
+      <ProductLineup />
+
+      {/* ⑧ AI診断テザー */}
       <DiagnosisTeaser />
+
+      {/* ⑨ 専門機関としての権威 */}
       <CaseAuthority />
+
+      {/* ⑩ お客様の声 */}
       <Testimonials />
+
+      {/* ⑪ ガイド記事ハブ */}
       <GuideHub />
+
+      {/* ⑫ 法人向けCTA */}
       <CorporateCTA />
+
+      {/* ⑬ FAQ */}
       <FAQPreview faqs={faqs} />
+
+      {/* ⑭ 関連サービス */}
       <RelatedServices />
 
       {/* Structured Data */}
