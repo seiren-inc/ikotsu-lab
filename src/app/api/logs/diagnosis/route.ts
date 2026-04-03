@@ -27,6 +27,7 @@ export async function POST(req: NextRequest) {
     // Prisma: ikotsu.diagnosis_logs へ保存
     await prisma.ikotsuDiagnosisLog.create({
       data: {
+        id: crypto.randomUUID(),
         session_id,
         bone_condition,
         future_plan,

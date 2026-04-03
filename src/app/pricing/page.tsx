@@ -21,32 +21,20 @@ export default async function PricingPage() {
       select: { rule_type: true, description: true, label: true, price_amount: true },
       orderBy: { sort_order: 'asc' },
     });
-  } catch (err) {
+  } catch {
     // DB未反映時のフォールバック用
   }
 
   const rules = rawRules || [];
 
-  let rawFees = null;
-  try {
-    rawFees = await prisma.ikotsuTravelFeeRule.findMany({
-      where: { is_active: true },
-      select: { rule_id: true, target_name: true, distance_km: true, toll_one_way: true },
-      orderBy: { sort_order: 'asc' },
-    });
-  } catch (err) {
-    // DB未反映時のフォールバック用
-  }
-
   const dbSizeOptions = rules
     .filter(r => r.rule_type === 'size')
-    .map(r => ({ value: r.description || '', label: r.label, add: r.price_amount }));
-    
+    .map(r => ({ value: r.description || '', label: r.label, add: r.price_amount ?? 0 }));
+
   const dbConditionOptions = rules
     .filter(r => r.rule_type === 'condition')
-    .map(r => ({ value: r.description || '', label: r.label, add: r.price_amount }));
+    .map(r => ({ value: r.description || '', label: r.label, add: r.price_amount ?? 0 }));
 
-  // Fallbacks if DB has not been seeded yet
   const sizeOptions = dbSizeOptions.length > 0 ? dbSizeOptions : [
     { value: 'small', label: '少量（2寸・3寸）', add: 0 },
     { value: 'medium', label: '標準（4寸・5寸）', add: 2200 },
@@ -59,14 +47,8 @@ export default async function PricingPage() {
     { value: 'mud', label: '土泥付き（土葬等）', add: 19800 },
   ];
 
-  const dbIcOptions = (rawFees || []).map(r => ({
-    id: r.rule_id,
-    name: r.target_name,
-    distanceKm: Number(r.distance_km),
-    tollOneWay: r.toll_one_way
-  }));
-
-  const icOptions = dbIcOptions.length > 0 ? dbIcOptions : [
+  // ikotsuTravelFeeRule モデルは未実装のため、フォールバックデータを常に使用
+  const icOptions = [
     { id: 'kanagawa_01', name: '【神奈川】保土ヶ谷IC周辺', distanceKm: 5.0, tollOneWay: 320 },
     { id: 'kanagawa_02', name: '【神奈川】横須賀・三浦方面（横須賀IC）', distanceKm: 27.3, tollOneWay: 930 },
     { id: 'tokyo_01', name: '【東京・首都高】世田谷方面（池尻）', distanceKm: 34.0, tollOneWay: 1400 },

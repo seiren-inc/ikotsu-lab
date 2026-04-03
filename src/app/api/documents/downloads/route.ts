@@ -4,21 +4,17 @@ import { prisma } from '@/lib/prisma';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { document_id, session_id } = body;
+    const { document_id } = body;
 
     if (!document_id) {
       return NextResponse.json({ error: 'Missing document_id' }, { status: 400 });
     }
 
-    // クライアント側（ブラウザ）の User-Agent を取得
-    const user_agent = request.headers.get('user-agent') || 'unknown';
-
     // Prisma: document_downloads にダウンロード記録を保存
     await prisma.ikotsuDocumentDownload.create({
       data: {
+        id: crypto.randomUUID(),
         document_id,
-        session_id: session_id || crypto.randomUUID(),
-        user_agent,
       },
     });
 

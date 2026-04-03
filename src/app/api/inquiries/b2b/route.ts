@@ -44,6 +44,7 @@ export async function POST(req: NextRequest) {
     const crmData = await prisma.$transaction(async (tx) => {
       const inquiry = await tx.crmInquiry.create({
         data: {
+          id: crypto.randomUUID(),
           inquiry_channel: 'b2b',
           status: 'new',
           organization_name: corporate_name,

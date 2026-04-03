@@ -38,6 +38,7 @@ export async function POST(req: NextRequest) {
     // Prisma: ikotsu.simulation_logs へ保存
     await prisma.ikotsuSimulationLog.create({
       data: {
+        id: crypto.randomUUID(),
         session_id,
         simulation_type: 'pricing', // 固定
         input_payload: inputPayload,

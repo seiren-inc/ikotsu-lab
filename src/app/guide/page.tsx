@@ -546,7 +546,7 @@ export default async function GuidePage() {
   try {
     rawArticles = await prisma.ikotsuSeoArticle.findMany({
       where: { is_published: true },
-      select: { slug: true, title: true, category: true, meta_description: true, read_time: true },
+      select: { slug: true, title: true, category: true, meta_description: true },
       orderBy: [
         { created_at: 'desc' }
       ]
@@ -562,7 +562,7 @@ export default async function GuidePage() {
     title: a.title,
     category: a.category,
     description: a.meta_description,
-    readTime: a.read_time
+    readTime: ''
   })) : GUIDE_ARTICLES;
 
   return (
@@ -605,7 +605,7 @@ export default async function GuidePage() {
                 <Link href={`/guide/${article.slug}`} className={styles.articleCard}>
                   <div className={styles.articleMeta}>
                     <span className={styles.articleCategory}>
-                      {CATEGORY_LABELS[article.category]}
+                      {article.category ? CATEGORY_LABELS[article.category] : ''}
                     </span>
                     <span className={styles.articleReadTime}>読了目安 {article.readTime}</span>
                   </div>

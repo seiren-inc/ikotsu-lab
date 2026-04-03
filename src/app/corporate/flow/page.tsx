@@ -74,19 +74,19 @@ export default async function CorporateFlowPage() {
   let rawDocs = null;
   try {
     rawDocs = await prisma.ikotsuDocument.findMany({
-      where: { document_category: 'corporate_flow', is_published: true },
-      select: { title: true, timing: true, description: true, format_type: true },
-      orderBy: { sort_order: 'asc' },
+      where: { document_type: 'corporate_flow', is_active: true },
+      select: { title: true, description: true },
+      orderBy: { created_at: 'asc' },
     });
-  } catch (err) {
+  } catch {
     // 開発環境やリモートDB未反映時のフォールバック用に握りつぶす
   }
 
   const documentList = rawDocs && rawDocs.length > 0 ? rawDocs.map(r => ({
     name: r.title,
-    timing: r.timing,
-    content: r.description,
-    format: r.format_type
+    timing: '—',
+    content: r.description || '',
+    format: '—'
   })) : [
     { name: '受領書', timing: '受領日当日', content: '受領日・管理番号・件数・遺骨の状態・担当者名', format: 'PDF（メール送付）' },
     { name: '処理完了報告書', timing: '処理完了後24時間以内', content: '管理番号・処理工程（グレード）・完了日・担当者名・処理前後写真（任意）', format: 'PDF（メール送付）' },

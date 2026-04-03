@@ -129,8 +129,8 @@ export default async function GuideArticlePage({ params }: Props) {
       title: data.title,
       category: data.category,
       description: data.meta_description,
-      readTime: data.read_time,
-      content: data.content_text,
+      readTime: '',
+      content: typeof data.content_json === 'string' ? data.content_json : JSON.stringify(data.content_json || ''),
       author: data.author || '遺骨.com 編集部',
       publishedAt: data.published_at
     };
@@ -149,7 +149,7 @@ export default async function GuideArticlePage({ params }: Props) {
         slug: { not: slug },
         is_published: true
       },
-      select: { slug: true, title: true, category: true, meta_description: true, read_time: true },
+      select: { slug: true, title: true, category: true, meta_description: true },
       take: 3
     });
   } catch (err) {
@@ -162,7 +162,7 @@ export default async function GuideArticlePage({ params }: Props) {
         title: r.title,
         category: r.category,
         description: r.meta_description,
-        readTime: r.read_time
+        readTime: ''
       }))
     : GUIDE_ARTICLES.filter((a) => a.slug !== slug).slice(0, 3);
 
@@ -183,7 +183,7 @@ export default async function GuideArticlePage({ params }: Props) {
 
               <FadeIn direction="up" className={styles.marginTop8}>
                 <span className={styles.articleHeaderCategory}>
-                  {CATEGORY_LABELS[article.category]}
+                  {article.category ? CATEGORY_LABELS[article.category] : ''}
                 </span>
                 <h1 className={styles.articleHeaderTitle}>{article.title}</h1>
                 <div className={styles.articleHeaderMeta}>
@@ -262,7 +262,7 @@ export default async function GuideArticlePage({ params }: Props) {
               <StaggerItem key={r.slug}>
                 <Link href={`/guide/${r.slug}`} className={styles.articleCard}>
                   <div className={styles.articleMeta}>
-                    <span className={styles.articleCategory}>{CATEGORY_LABELS[r.category]}</span>
+                    <span className={styles.articleCategory}>{r.category ? CATEGORY_LABELS[r.category] : ''}</span>
                     <span className={styles.articleReadTime}>読了目安 {r.readTime}</span>
                   </div>
                   <h3 className={styles.articleTitle}>{r.title}</h3>
